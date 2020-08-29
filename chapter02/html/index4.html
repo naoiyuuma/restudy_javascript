@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+    <div class="frame">
+        <h1 class="frame__title">JavaScript</h1>
+
+        <div class="frame__inner">
+            <!-- ここに、JavaScriptを記述します -->
+            <script>
+                const week = ['日', '月', '火', '水', '木', '金', '土'];
+                let today = new Date();
+
+                // 曜日を日本語で取り出す
+                let week_jp = week[today.getDay()];
+                //getDay:0~6を取得
+                document.write(`今日は、${week_jp}曜日です <br>`);
+                for (let i = 0; i < week.length; i++) {
+                    document.write(week[i]);
+                }
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

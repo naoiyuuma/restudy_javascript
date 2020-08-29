@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+    <div class="frame">
+        <h1 class="frame__title">JavaScript</h1>
+
+        <div class="frame__inner">
+            <!-- ここに、JavaScriptを記述します -->
+            <!--  
+            <script>
+                //prompt->string型　型変換parseInt
+                const price = parseInt(prompt('金額を入力してください'));
+                const tax = 10;
+                //関数
+                const getTax = (price, tax) => {
+                    return Math.round(price * (tax / 100));
+                }
+
+                //Numberはインスタンスを作る必要なし
+                if (Number.isFinite(price)) {
+                    let tax_price = Math.round(price * tax / 100);
+                    //tax_price = getTax(price, tax);
+                    document.write(`${price}円の消費税は${tax_price}円です`);
+                } else {
+                    document.write('数字で入力してください');
+                }
+            </script>
+-->
+            <script>
+                class ItemToMakeObject {
+                    //コンストラクターの定義
+                    constructor(price) {
+                        this.tax = 10;
+                        if (isFinite(price)) {
+                            this.price = price;
+                        } else {
+                            this.price = 0;
+                        }
+                    }
+                    //関数の宣言
+                    getTax = () => {
+                        return Math.round(this.price * (this.tax / 100));
+                    }
+                }
+
+                const inputPrice = parseInt(prompt('金額を入力してください'));
+                //インスタンスの作成
+                let item = new ItemToMakeObject(inputPrice);
+
+                let tax = item.getTax();
+                if (tax) {
+                    document.write(`${inputPrice}円の消費税は、${tax}円です`);
+                } else {
+                    document.write('数字を入力してください');
+                }
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>
