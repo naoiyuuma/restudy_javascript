@@ -16,19 +16,25 @@
             <div id="output"></div>
             <!-- ここに、JavaScriptを記述します -->
             <script>
-                const url = 'locations.json';
+                const url = '../html/location.json';
 
                 /* JSONデータを非同期で読み込む */
                 const getLocations = () => {
                     return new Promise(function (resolve) {
-
+                        //XMLHttpRequestオブジェクトを定義
                         let xhr = new XMLHttpRequest();
-
+                        //呼び出し指定'GET'
                         xhr.open('GET', url);
                         xhr.send();
 
                         xhr.onreadystatechange = () => {
+                            //詳しくはHTTPレスポンスステータスコードを参照
+                            //正常に終了
                             if (xhr.readyState === 4 && xhr.status === 200) {
+
+                                // 基本構文
+                                //JSON.parse(text[, reviver])
+                                //JSONをJavaScriptオブジェクトに変換する
                                 let result = JSON.parse(xhr.responseText);
 
                                 resolve(result);
@@ -36,7 +42,7 @@
                         }
                     });
                 }
-
+                //promise処理の続き
                 /* ファンクションを呼び出して画面を構成する */
                 getLocations().then(function (locations) {
                     let html = '';
