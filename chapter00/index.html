@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Web APIを使った住所検索〜Yahoo! デベロッパーネットワーク〜</title>
+    <link rel="stylesheet" href="../chapter00/style/main.css">
+    <link rel="stylesheet" href="../chapter00/style/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo"></div>
+            <h1 class="page-title">Web APIを使った住所検索〜Yahoo! デベロッパーネットワーク〜</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <!-- メインコンテンツ -->
+            <div class="tab-ui">
+                <ul class="tabs">
+                    <li data-pair="tab1" class="tab active">郵便番号で検索</li>
+                    <li data-pair="tab2" class="tab">住所で検索</li>
+                </ul>
+                <div id="tab1" class="tabbox">
+                    <form action="#">
+                        <p>
+                            <label for="zipcode">〒</label>
+                            <input type="text" id="zipcode" name="zipcode">
+                            <button id="zip-search">住所を検索</button>
+                        </p>
+                        <p>
+                            <label for="pref">住所1</label>
+                            <input type="text" id="address1" name="address1">
+                        </p>
+                        <p>
+                            <label for="town">住所2</label>
+                            <input type="text" id="address2" name="address2">
+                        </p>
+                        <p><input type="submit" value="送信"></p>
+                    </form>
+
+                    <!-- Begin Yahoo! JAPAN Web Services Attribution Snippet -->
+                    <a href="https://developer.yahoo.co.jp/about">
+                        <img src="https://s.yimg.jp/images/yjdn/yjdn_attbtn1_125_17.gif" title="Webサービス by Yahoo! JAPAN"
+                            alt="Web Services by Yahoo! JAPAN" width="125" height="17" border="0"
+                            style="margin:15px 15px 15px 0"></a>
+                    <!-- End Yahoo! JAPAN Web Services Attribution Snippet -->
+                    <!-- メインコンテンツ -->
+                </div>
+                <div id="tab2" class="tabbox hide">
+                    <li>住所検索する、やれるといいね</li>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <small>JavaScript Study Lab.</small>
+        </div>
+    </footer>
+
+    <script src="script/jquery-3.3.1.min.js"></script>
+    <script src="script/script.js"></script>
+</body>
+
+</html>

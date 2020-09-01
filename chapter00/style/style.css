@@ -1,0 +1,60 @@
+input[type="text"]{
+	padding: 4px;
+	font-size: 16px;
+}
+#zipcode {
+	width: 150px;
+}
+#address1,
+#address2 {
+	width: 400px;
+}
+
+
+
+
+
+
+.tabs {
+	margin: 0;
+	border-bottom: 1px solid #1d46a0;
+	padding: 0;
+	list-style: none;
+
+	display: flex;
+}
+.tab {
+	margin-right: 2px;
+	padding: 6px 18px;
+	background: #8c9ed4;
+	border-radius: 6px 6px 0 0;
+	color: white;
+	cursor: default;
+}
+.tab.active {
+	background: #1d46a0;
+}
+
+.tabbox {
+	padding: 16px 8px;
+	border: 1px solid #8c9ed4;
+}
+
+.tabbox dl {
+	overflow: hidden;
+	margin: 0;
+}
+.tabbox dt {
+	clear: left;
+	float: left;
+}
+.tabbox dd {
+	float: right;
+}
+.tabbox ol {
+	margin: 0;
+}
+
+.hide {
+	display: none;
+}
