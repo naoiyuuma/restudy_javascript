@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <div class="frame">
+        <h1 class="frame__title">コンポーネント完全に理解した</h1>
+
+        <div class="frame__inner">
+            <div id="app">
+                <p>現在日時</p>
+                <date></date>
+                <date></date>
+            </div>
+            <div id="app2">
+                <clock></clock>
+                <clock style="color: blue">現在時刻</clock>
+            </div>
+
+            <!-- ここに、JavaScriptを記述します -->
+            <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+            <script>
+                Vue.component('date', {
+                    data: function () {
+                        return {
+                            today: ''
+                        }
+                    },
+                    mounted: function () {
+                        const now = new Date();
+                        this.today = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}`;
+                    },
+                    //マスタッシュ構文使用可
+                    template: '<div>{{ today }}</div>'
+                })
+
+                var app = new Vue({
+                    el: "#app",
+                })
+
+                Vue.component('clock', {
+                    data: function () {
+                        return {
+                            time: ''
+                        }
+                    },
+                    mounted: function () {
+                        var timerID = setInterval(this.refresh, 500);
+                    },
+                    methods: {
+                        refresh: function () {
+                            var now = new Date();
+                            this.time = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+                        }
+                    },
+                    template: '<div :style=""><h2><slot>時計</slot></h2>{{ time }}</div>'
+
+                    //<slot>タグで置き換えたいところを指定可能
+                    //style属性の書き換え
+                })
+                //これが無いと動作しない、そもそも表示されない->なぜ？
+                var app = new Vue({
+                    el: "#app2"
+                })
+
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

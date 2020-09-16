@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<style>
+    .error {
+        color: red;
+    }
+</style>
+
+<body>
+    <div class="frame__inner">
+
+        <div id="app">
+            <p v-bind:class="error_class">
+                {{ message }}
+            </p>
+        </div>
+
+        <div id="app-2">
+            <span v-bind:title="message2">
+                Hover your mouse over me for a few seconds
+                to see my dynamically bound title!
+            </span>
+        </div>
+
+        <div id="app-3">
+            <span v-if="seen">Now you see me</span>
+        </div>
+
+        <div id="app-4">
+            <ol>
+                <li v-for="todo in todos">
+                    {{ todo.text }}
+                </li>
+            </ol>
+        </div>
+
+
+        <script>
+            // ロードされ、Vueがグローバル変数として定義されているか確認
+            console.assert(typeof Vue !== 'undefined');
+
+            var app1 = new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello Vue!',
+                    error_class: "error"
+                }
+            });
+
+            var app2 = new Vue({
+                el: '#app-2',
+                data: {
+                    message2: 'You loaded this page on ' + new Date().toLocaleString()
+                }
+            });
+
+            var app3 = new Vue({
+                el: '#app-3',
+                data: {
+                    seen: true
+                }
+            });
+            var app4 = new Vue({
+                el: '#app-4',
+                data: {
+                    todos: [
+                        { text: 'Learn JavaScript' },
+                        { text: 'Learn Vue' },
+                        { text: 'Build something awesome' }
+                    ]
+                }
+            });
+        </script>
+</body>
+
+</html>

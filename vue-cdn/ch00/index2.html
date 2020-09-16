@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+</head>
+
+<body>
+    <div class="frame">
+        <h1 class="frame__title">フォームの値をVue.jsと接続しよう</h1>
+
+        <div class="frame__inner">
+            <div id="app4">
+                <button @click="checkClick" :disabled="clicked">検索する</button>
+            </div>
+            <!-- v-on === @ とできる-->
+
+            <div id="app">
+                <input type="number" v-model="number"> = {{ number }}
+            </div>
+            <div id="app2">
+                <p v-if="out_service">Now,not open</p>
+            </div>
+
+            <div id="app3">
+                <ul v-for="weekday of weeks" :key="weekday">
+                    <li>{{ weekday }}</li>
+                </ul>
+            </div>
+            <!-- ここに、JavaScriptを記述します -->
+            <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+            <script>
+                var app = new Vue({
+                    el: "#app",
+                    data: {
+                        number: 100
+                    }
+                });
+                var today = new Date();
+                var hour = today.getHours();
+                var app2 = new Vue({
+                    el: "#app2",
+                    data: {
+                        out_service: (hour > 21),
+                    }
+                });
+
+                var app3 = new Vue({
+                    el: "#app3",
+                    data: {
+                        weeks: ['日', '月', '火', '水', '木', '金', '土']
+                    }
+                });
+                // v-for="変数 of 配列" :key="変数"
+
+                var app5 = new Vue({
+                    el: "#app4",
+                    data: {
+                        clicked: false
+                    },
+                    methods: {
+                        checkClick: function () {
+                            this.clicked = true
+                        }
+                    }
+                });
+
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>
