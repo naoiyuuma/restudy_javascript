@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <div class="frame">
+        <h1 class="frame__title">ミックスインでよく使う処理をまとめよう</h1>
+
+        <div class="frame__inner">
+            <div id="app">
+                <p>{{ number }}</p>
+            </div>
+            <div id="app2">
+                <!-- 
+                    v-model.number="num1"
+                    numberは修飾子
+                 -->
+                <input type="number" name="num111111" v-model.number="num1" @change="calc"> +
+                <input type="number" name="num222222" v-model.number="num2" @change="calc"> =
+                <span>{{ answer }}</span>
+            </div>
+            <!-- ここに、JavaScriptを記述します -->
+            <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+            <script src="script4.js"></script>
+        </div>
+    </div>
+</body>
+
+</html>
