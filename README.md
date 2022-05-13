@@ -1,9 +1,6 @@
 # restudy_javascript
-## javascriptを勉強する
-- 某インターンに向けてjavascriptの勉強をもう一回する
-- 参考書籍は「これから始める人のjavascript/Vue.jsの教科書」
-- ~~決して参加メンバーの学歴を見て焦ったわけではない~~
-## Vue.jsを勉強する
-- まずはCDNで簡単な文法を理解する
-- 次はVue-cliでWebページを作ってみる
-- 公式ドキュメントと「Vue.js入門」をパパッと進める
+## 参考書籍
+- これから始める人のjavascript/Vue.jsの教科書
+- Vue.js入門　基礎から実践アプリケーション開発まで
+- https://jp.vuejs.org/v2/guide/index.html
+
